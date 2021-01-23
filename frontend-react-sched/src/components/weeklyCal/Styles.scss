@@ -3,7 +3,7 @@
   position: relative;
   grid-template-rows: 70px 1fr;
   grid-template-columns: 1fr;
-  margin: 0em 0.1em 0em 0.1em;
+  margin: 0.1em;
 }
 
 .weekly-calendar {
@@ -633,7 +633,8 @@
     padding: 0.5em;
     background: white;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1);
-    border-radius: 4px; }
+    // border-radius: 4px; 
+}
   
 .weekday {
     text-align: center;
@@ -647,7 +648,7 @@
 .time {
     background: white;
     padding: 4px 1em;
-    font-size: 0.75em;
+    font-size: 1em;
     color: #AAA;
     border-bottom: 1px dotted rgba(0,0,0,0.1); 
 }
@@ -799,13 +800,15 @@ $template-rows: "[weekday] auto ";
   background: white;
   padding: 1em;
   border-bottom: 1px solid rgba(0,0,0,0.1);
+  font-size: 0.8em;
+  color: navy;
 }
 
 .time {
   background: white;
   padding: 4px 1em;
-  font-size: 0.75em;
-  color: #AAA;
+  font-size: 0.8em;
+  color: navy;
   border-right: 1px solid rgba(0,0,0,0.1);
 }
 
