@@ -5,7 +5,6 @@ function App() {
   return (
     <div class="container">
       <div class="side-bar"> SIDE BAR </div>
-      {/* weekly calendar view  */}
       <div class="weekly-cal-container">
         <WeeklyCal />
       </div>
