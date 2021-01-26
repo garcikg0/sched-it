@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  journal: one
+  created_date: 2021-01-26
+  content: MyString
+
+two:
+  journal: two
+  created_date: 2021-01-26
+  content: MyString
