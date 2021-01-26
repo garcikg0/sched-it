@@ -8,7 +8,7 @@ function App() {
       <div class="weekly-cal-container">
         <WeeklyCal />
       </div>
-      
+      {/* just trying to fix */}
 
       <div class="personal-to-do">PERSONAL TO DO</div>
         
