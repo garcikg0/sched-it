@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Switch, Redirect, withRouter, useHistory } from 'react-router-dom';
 import './index.css';
 import WeeklyCal from './components/weeklyCal/WeeklyCal';
@@ -10,10 +10,32 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
   let history = useHistory();
 
+  useEffect(() => {
+    if (localStorage.token) {
+      fetch(`http://localhost:3000/autologin`, {
+        header: {
+          "Authorization": `Bearer ${localStorage.token}`
+        }
+      })
+      .then(r=>r.json())
+      .then(data => {
+        if (!data.error) {
+          handleLogin(data)
+        }
+      })
+    }
+  }, []);
+
   const handleLogin = ( user ) => {
     setCurrentUser( user )
     history.pushState('/home')
   };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token")
+    setCurrentUser(null)
+    history.push('/')
+  }
 
   return (
     <>
