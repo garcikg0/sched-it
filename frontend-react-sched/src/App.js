@@ -10,8 +10,10 @@ const App = () => {
 
   return (
     <>
-      <LoginForm />
     <Switch>
+      <Route path='/login' exact>
+        <LoginForm />
+      </Route>
       <Route path='/home' exact>
       <div class="container">
       <div class="side-bar"> SIDE BAR </div>
