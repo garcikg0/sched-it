@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-    has_secure_password 
-    validates :username, uniqueness: { case_sensitive: false}
+
+    skip_before_action :authenticate, only: [:create, :login]
 
     def create 
         user = User.create(
@@ -18,6 +18,7 @@ class UsersController < ApplicationController
         else
             render json: { message: user.errors.full_messages }, status: :bad_request
         end
+
     end
 
     def login 
