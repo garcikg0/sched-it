@@ -4,6 +4,7 @@ import './index.css';
 import WeeklyCal from './components/weeklyCal/WeeklyCal';
 import LoginForm from './components/loginForm/LoginForm';
 import SignUpForm from './components/signUpForm/SignUpForm';
+import NavBar from './components/navBar/NavBar'
 
 const App = () => {
 
@@ -28,13 +29,13 @@ const App = () => {
 
   const handleLogin = ( user ) => {
     setCurrentUser( user )
-    history.pushState('/home')
+    history.push('/home')
   };
 
   const handleLogout = () => {
     localStorage.removeItem("token")
     setCurrentUser(null)
-    history.push('/')
+    history.push('/login')
   }
 
   return (
@@ -47,6 +48,7 @@ const App = () => {
         <SignUpForm handleLogin={handleLogin} />
       </Route> 
       <Route path='/home' exact>
+        <NavBar currentUser={currentUser} handleLogout={handleLogout} />
       <div class="container">
       <div class="side-bar"> SIDE BAR </div>
       <div class="weekly-cal-container">
