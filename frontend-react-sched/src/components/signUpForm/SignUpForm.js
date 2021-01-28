@@ -13,12 +13,13 @@ const SignUpForm = ({ handleLogin }) => {
 
     const handleChange = e => {
         const value = e.target.value;
-        const name = e.target.id;
+        const name = e.target.name;
 
         setSignupData({
             ...signupData,
             [name]: value
         })
+        console.log(signupData)
     };
 
     const handleSubmit = e => {
@@ -85,7 +86,7 @@ const SignUpForm = ({ handleLogin }) => {
                     class="login-form-input"
                     type="password"
                     name="password"
-                    autoComplete="off"
+                    autoComplete="current-password"
                     onChange={handleChange}
                 />
 

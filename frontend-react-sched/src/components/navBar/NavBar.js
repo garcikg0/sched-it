@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 
 const NavBar = ({ currentUser, handleLogout }) => {
 
-    const [currentUser, setCurrentUser] = useState(currentUser)
+    // const [currentUser, setCurrentUser] = useState(currentUser)
 
-    const handleLogout = e => {
-        e.preventDefault()
-        handleLogout()
-    }
+    // const handleLogout = e => {
+    //     e.preventDefault()
+    //     handleLogout()
+    // }
 
-    useEffect(() => {
-        let newCurrentUser = currentUser
-        setCurrentUser(newCurrentUser)
-    }, [currentUser] )
+    // useEffect(() => {
+    //     let newCurrentUser = currentUser
+    //     setCurrentUser(newCurrentUser)
+    // }, [currentUser] )
 
     return(
         <header>

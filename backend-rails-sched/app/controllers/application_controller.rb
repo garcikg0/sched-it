@@ -25,7 +25,7 @@ class ApplicationController < ActionController::API
         auth_header.split(' ')[1] if auth_header
     end
 
-    def set_current_user!(id)
+    def set_current_user
         @current_user = User.find(id)
     end
 

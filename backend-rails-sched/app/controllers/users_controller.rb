@@ -14,7 +14,6 @@ class UsersController < ApplicationController
         if user.valid? 
             token = encode_token({ user_id: user.id })
             render json: { user: UserSerializer.new(user), token: token }, status: :created
-            render json: { error: user.errors.full_messages }, status: :bad_request
         else
             render json: { message: user.errors.full_messages }, status: :bad_request
         end
