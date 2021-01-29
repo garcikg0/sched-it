@@ -48,16 +48,21 @@ const App = () => {
         <SignUpForm handleLogin={handleLogin} />
       </Route> 
       <Route path='/home' exact>
+        {currentUser ? 
+        <>
         <NavBar currentUser={currentUser} handleLogout={handleLogout} />
-      <div class="container">
-      <div class="side-bar"> SIDE BAR </div>
-      <div class="weekly-cal-container">
-        <WeeklyCal />
-      </div>
-      <div class="personal-to-do">PERSONAL TO DO</div>   
-      <div class="work-to-do">WORK TO DO</div>
-      <div class="post-it">POST IT</div>
-    </div>
+        <div class="container">
+        <div class="side-bar"> SIDE BAR </div>
+        <div class="weekly-cal-container">
+          <WeeklyCal />
+        </div>
+        <div class="personal-to-do">PERSONAL TO DO</div>   
+        <div class="work-to-do">WORK TO DO</div>
+        <div class="post-it">POST IT</div>
+        </div>
+        </> : 
+        <Redirect to='/login' />
+        } 
       </Route>
     </Switch>
     </>
