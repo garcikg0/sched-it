@@ -5,6 +5,7 @@ import WeeklyCal from './components/weeklyCal/WeeklyCal';
 import LoginForm from './components/loginForm/LoginForm';
 import SignUpForm from './components/signUpForm/SignUpForm';
 import NavBar from './components/navBar/NavBar'
+import HomePage from './components/homePage/HomePage'
 
 const App = () => {
 
@@ -42,14 +43,7 @@ const App = () => {
     <>
     <Switch>
       <Route path='/' >
-        <div>
-          HomePage - Shedjool Title
-          Sign In Button with icon and Sign Up Button with icon 
-          Overview: Quick and distraction-free way to jumpstart your day 
-          Video transparent background someone writing in calendar
-          Quick Glance on Today's schedule, to-do lists, and journal entry 
-          Weekly View with top 3 goals, weekly calendar view, and to-do's scheduled for that week
-        </div>
+        <HomePage />
       </Route>
       <Route path='/login' exact>
         <LoginForm handleLogin={handleLogin} />
